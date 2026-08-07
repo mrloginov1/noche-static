@@ -8291,395 +8291,6 @@ body:hover .scene-counter { opacity: 1; }
 <!-- ═══════════════════════════════════════════
      S — 10 GROWTH ENGINES (overview only — no details)
      ═══════════════════════════════════════════ -->
-<section class="scene scene--dark" id="scene-engines"
-  data-n="10 מנועי צמיחה — מבט-על על כל הציר. אין פירוט בפגישת ההיכרות, רק תמונה כוללת.">
-  <div class="vignette"></div>
-
-  <style>
-  /* ── Scene Engines Overview — Premium Dark ─────────── */
-  #scene-engines {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .eng-inner {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1160px;
-    padding: 48px 48px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-
-  .eng-header { text-align: center; }
-
-  .eng-body {
-    display: flex;
-    gap: 16px;
-    direction: rtl;
-    align-items: stretch;
-    width: 100%;
-    max-height: 370px;
-  }
-
-  /* ── Force Multiplier column ── */
-  .eng-multipliers {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 196px;
-    flex-shrink: 0;
-  }
-
-  .eng-mcard {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 16px 16px 18px;
-    border-radius: 14px;
-    background: linear-gradient(160deg, #1e1808 0%, #16130a 55%, #0e0b06 100%);
-    border: 1px solid rgba(201,168,76,.45);
-    border-top-color: rgba(201,168,76,.7);
-    box-shadow:
-      0 0 0 1px rgba(201,168,76,.06),
-      0 4px 20px rgba(0,0,0,.6),
-      0 0 48px rgba(201,168,76,.10),
-      inset 0 1px 0 rgba(201,168,76,.18);
-    transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
-    overflow: hidden;
-    will-change: transform;
-  }
-  .eng-mcard::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(201,168,76,.75), transparent);
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .eng-mcard:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 0 0 1px rgba(201,168,76,.12),
-        0 8px 28px rgba(0,0,0,.7),
-        0 0 70px rgba(201,168,76,.20),
-        inset 0 1px 0 rgba(201,168,76,.25);
-    }
-  }
-  .eng-mcard__badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-family: var(--ff-body);
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    background: var(--clr-gold);
-    color: #07070c;
-    padding: 3px 8px;
-    border-radius: 20px;
-  }
-  .eng-mcard__live {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-family: var(--ff-body);
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--clr-green);
-  }
-  .eng-mcard__live::before {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-    box-shadow: 0 0 6px currentColor;
-    animation: dotPulse 2.2s ease-in-out infinite;
-  }
-  .eng-mcard__icon {
-    width: 28px;
-    height: 28px;
-    color: var(--clr-gold);
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 8px rgba(201,168,76,.45));
-    flex-shrink: 0;
-  }
-  .eng-mcard__title {
-    font-family: var(--ff-display);
-    font-size: clamp(13px, 1.15vw, 15px);
-    font-weight: var(--fw-medium);
-    letter-spacing: -0.01em;
-    color: var(--clr-text-primary);
-    margin: 0;
-    text-align: center;
-    text-wrap: balance;
-    line-height: 1.2;
-  }
-
-  /* ── 4×2 engine card grid ── */
-  .eng-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .eng-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 12px 12px 14px;
-    border-radius: 12px;
-    background: rgba(255,255,255,.028);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,.07);
-    border-top-color: rgba(201,168,76,.18);
-    box-shadow:
-      0 1px 3px rgba(0,0,0,.45),
-      0 4px 14px rgba(0,0,0,.35),
-      inset 0 1px 0 rgba(255,255,255,.04);
-    transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), border-color 200ms var(--ease-out);
-    overflow: hidden;
-    will-change: transform;
-  }
-  .eng-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 18%; right: 18%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201,168,76,.3), transparent);
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .eng-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(201,168,76,.3);
-      border-top-color: rgba(201,168,76,.5);
-      box-shadow:
-        0 2px 8px rgba(0,0,0,.55),
-        0 8px 22px rgba(0,0,0,.4),
-        0 0 32px rgba(201,168,76,.09),
-        inset 0 1px 0 rgba(255,255,255,.06);
-    }
-  }
-  .eng-card__status {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    font-family: var(--ff-body);
-    font-size: 7.5px;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-  }
-  .eng-card__status::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: currentColor;
-    flex-shrink: 0;
-  }
-  .eng-card__status--active {
-    color: var(--clr-green);
-  }
-  .eng-card__status--active::before {
-    box-shadow: 0 0 5px currentColor;
-    animation: dotPulse 2.2s ease-in-out infinite;
-  }
-  .eng-card__status--starting {
-    color: rgba(201,168,76,.7);
-  }
-  .eng-card__icon {
-    width: 22px;
-    height: 22px;
-    color: var(--clr-gold);
-    opacity: 0.82;
-    margin-bottom: 8px;
-    flex-shrink: 0;
-  }
-  .eng-card__title {
-    font-family: var(--ff-display);
-    font-size: clamp(10px, 0.92vw, 12.5px);
-    font-weight: var(--fw-medium);
-    letter-spacing: -0.01em;
-    color: var(--clr-text-primary);
-    margin: 0;
-    text-align: center;
-    text-wrap: balance;
-    line-height: 1.25;
-  }
-
-  /* ── Footer stats ── */
-  .eng-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    direction: rtl;
-  }
-  .eng-stat {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0 24px;
-  }
-  .eng-stat + .eng-stat {
-    border-right: 1px solid rgba(201,168,76,.18);
-  }
-  .eng-stat__num {
-    font-family: var(--ff-display);
-    font-size: clamp(22px, 2.2vw, 28px);
-    font-weight: var(--fw-light);
-    letter-spacing: -0.04em;
-    color: var(--clr-gold);
-    line-height: 1;
-  }
-  .eng-stat__label {
-    font-family: var(--ff-body);
-    font-size: 11px;
-    font-weight: var(--fw-medium);
-    letter-spacing: 0.04em;
-    color: rgba(201,168,76,.5);
-    text-align: right;
-    line-height: 1.3;
-  }
-  .eng-stat__icon {
-    width: 16px;
-    height: 16px;
-    color: rgba(201,168,76,.45);
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 900px) {
-    .eng-body { flex-direction: column; max-height: none; }
-    .eng-multipliers { flex-direction: row; width: 100%; }
-    .eng-mcard { flex: 1; min-height: 100px; }
-    .eng-grid { grid-template-columns: repeat(4, 1fr); }
-    .eng-inner { padding: 40px 32px 32px; gap: 24px; }
-  }
-  @media (max-width: 600px) {
-    .eng-grid { grid-template-columns: repeat(2, 1fr); }
-    .eng-inner { padding: 32px 20px; gap: 20px; }
-  }
-  </style>
-
-  <div class="eng-inner">
-
-    <!-- Body -->
-    <div class="eng-body reveal reveal--d1">
-
-      <!-- Force Multipliers (left column) -->
-      <div class="eng-multipliers">
-
-        <article class="eng-mcard">
-          <span class="eng-mcard__badge">מכפיל</span>
-          <i data-lucide="badge-check" class="eng-mcard__icon"></i>
-          <h3 class="eng-mcard__title">כשרות המקום</h3>
-        </article>
-
-        <article class="eng-mcard">
-          <span class="eng-mcard__badge">מכפיל</span>
-          <i data-lucide="monitor" class="eng-mcard__icon"></i>
-          <h3 class="eng-mcard__title">שיווק דיגיטלי</h3>
-        </article>
-
-      </div>
-
-      <!-- 8 regular engines (4×2 grid) -->
-      <div class="eng-grid">
-
-        <article class="eng-card">
-<i data-lucide="truck" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">הסעדות חוץ</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="package" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">משלוחים</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="calendar" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">אירועים פרטיים</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="satellite" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">שיווק יס פלאנט</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="music" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">אווירת בילוי</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="graduation-cap" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">מכללה למינהל</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="mic" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">הופעות חיות</h3>
-        </article>
-
-        <article class="eng-card">
-<i data-lucide="tv" class="eng-card__icon"></i>
-          <h3 class="eng-card__title">שידורי ספורט</h3>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- Header -->
-    <header class="eng-header">
-      <h2 class="heading-2 reveal reveal--d2 ts" style="margin-bottom:8px">10 מנועי צמיחה</h2>
-      <p class="text-muted reveal reveal--d3" style="font-size:14px; max-width:500px; margin: 0 auto; font-weight:var(--fw-light);">
-        תמונה כוללת. בפגישת ההצעה נצלול לפירוט המלא — תכנית, יעדים, מספרים.
-      </p>
-    </header>
-
-    <!-- Footer stats -->
-    <footer class="eng-footer reveal reveal--d4">
-      <div class="eng-stat">
-        <span class="eng-stat__num">8</span>
-        <span class="eng-stat__label">מנועי<br>הכנסה</span>
-      </div>
-      <div class="eng-stat">
-        <span class="eng-stat__num">2</span>
-        <span class="eng-stat__label">מכפילי<br>כוח</span>
-      </div>
-      <div class="eng-stat">
-        <i data-lucide="file-text" class="eng-stat__icon"></i>
-        <span class="eng-stat__label">תוכנית<br>עסקית מלאה</span>
-      </div>
-    </footer>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     S — ENGINE DETAIL SUB-STACK (10 vertical slides)
-     ═══════════════════════════════════════════ -->
 <section class="scene scene--dark" id="scene-engines-stack"
   data-n="פירוט 10 מנועי הצמיחה — כל מנוע ומה הוא מביא. ↓ לדפדוף בין המנועים, → לקפוץ ישר למתחם ה-1000.">
 
@@ -9281,6 +8892,395 @@ body:hover .scene-counter { opacity: 1; }
 
 <!-- ═══════════════════════════════════════════
      S3 — COMPLEX 1000
+     ═══════════════════════════════════════════ -->
+<section class="scene scene--dark" id="scene-engines"
+  data-n="10 מנועי צמיחה — מבט-על על כל הציר. אין פירוט בפגישת ההיכרות, רק תמונה כוללת.">
+  <div class="vignette"></div>
+
+  <style>
+  /* ── Scene Engines Overview — Premium Dark ─────────── */
+  #scene-engines {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .eng-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1160px;
+    padding: 48px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .eng-header { text-align: center; }
+
+  .eng-body {
+    display: flex;
+    gap: 16px;
+    direction: rtl;
+    align-items: stretch;
+    width: 100%;
+    max-height: 370px;
+  }
+
+  /* ── Force Multiplier column ── */
+  .eng-multipliers {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 196px;
+    flex-shrink: 0;
+  }
+
+  .eng-mcard {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px 16px 18px;
+    border-radius: 14px;
+    background: linear-gradient(160deg, #1e1808 0%, #16130a 55%, #0e0b06 100%);
+    border: 1px solid rgba(201,168,76,.45);
+    border-top-color: rgba(201,168,76,.7);
+    box-shadow:
+      0 0 0 1px rgba(201,168,76,.06),
+      0 4px 20px rgba(0,0,0,.6),
+      0 0 48px rgba(201,168,76,.10),
+      inset 0 1px 0 rgba(201,168,76,.18);
+    transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+    overflow: hidden;
+    will-change: transform;
+  }
+  .eng-mcard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,.75), transparent);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .eng-mcard:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 0 1px rgba(201,168,76,.12),
+        0 8px 28px rgba(0,0,0,.7),
+        0 0 70px rgba(201,168,76,.20),
+        inset 0 1px 0 rgba(201,168,76,.25);
+    }
+  }
+  .eng-mcard__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: var(--ff-body);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: var(--clr-gold);
+    color: #07070c;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+  .eng-mcard__live {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--ff-body);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--clr-green);
+  }
+  .eng-mcard__live::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 6px currentColor;
+    animation: dotPulse 2.2s ease-in-out infinite;
+  }
+  .eng-mcard__icon {
+    width: 28px;
+    height: 28px;
+    color: var(--clr-gold);
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px rgba(201,168,76,.45));
+    flex-shrink: 0;
+  }
+  .eng-mcard__title {
+    font-family: var(--ff-display);
+    font-size: clamp(13px, 1.15vw, 15px);
+    font-weight: var(--fw-medium);
+    letter-spacing: -0.01em;
+    color: var(--clr-text-primary);
+    margin: 0;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+  /* ── 4×2 engine card grid ── */
+  .eng-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .eng-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.028);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,.07);
+    border-top-color: rgba(201,168,76,.18);
+    box-shadow:
+      0 1px 3px rgba(0,0,0,.45),
+      0 4px 14px rgba(0,0,0,.35),
+      inset 0 1px 0 rgba(255,255,255,.04);
+    transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), border-color 200ms var(--ease-out);
+    overflow: hidden;
+    will-change: transform;
+  }
+  .eng-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 18%; right: 18%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,.3), transparent);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .eng-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(201,168,76,.3);
+      border-top-color: rgba(201,168,76,.5);
+      box-shadow:
+        0 2px 8px rgba(0,0,0,.55),
+        0 8px 22px rgba(0,0,0,.4),
+        0 0 32px rgba(201,168,76,.09),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    }
+  }
+  .eng-card__status {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--ff-body);
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .eng-card__status::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+  .eng-card__status--active {
+    color: var(--clr-green);
+  }
+  .eng-card__status--active::before {
+    box-shadow: 0 0 5px currentColor;
+    animation: dotPulse 2.2s ease-in-out infinite;
+  }
+  .eng-card__status--starting {
+    color: rgba(201,168,76,.7);
+  }
+  .eng-card__icon {
+    width: 22px;
+    height: 22px;
+    color: var(--clr-gold);
+    opacity: 0.82;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+  .eng-card__title {
+    font-family: var(--ff-display);
+    font-size: clamp(10px, 0.92vw, 12.5px);
+    font-weight: var(--fw-medium);
+    letter-spacing: -0.01em;
+    color: var(--clr-text-primary);
+    margin: 0;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 1.25;
+  }
+
+  /* ── Footer stats ── */
+  .eng-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    direction: rtl;
+  }
+  .eng-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 24px;
+  }
+  .eng-stat + .eng-stat {
+    border-right: 1px solid rgba(201,168,76,.18);
+  }
+  .eng-stat__num {
+    font-family: var(--ff-display);
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: var(--fw-light);
+    letter-spacing: -0.04em;
+    color: var(--clr-gold);
+    line-height: 1;
+  }
+  .eng-stat__label {
+    font-family: var(--ff-body);
+    font-size: 11px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.04em;
+    color: rgba(201,168,76,.5);
+    text-align: right;
+    line-height: 1.3;
+  }
+  .eng-stat__icon {
+    width: 16px;
+    height: 16px;
+    color: rgba(201,168,76,.45);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .eng-body { flex-direction: column; max-height: none; }
+    .eng-multipliers { flex-direction: row; width: 100%; }
+    .eng-mcard { flex: 1; min-height: 100px; }
+    .eng-grid { grid-template-columns: repeat(4, 1fr); }
+    .eng-inner { padding: 40px 32px 32px; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .eng-grid { grid-template-columns: repeat(2, 1fr); }
+    .eng-inner { padding: 32px 20px; gap: 20px; }
+  }
+  </style>
+
+  <div class="eng-inner">
+
+    <!-- Body -->
+    <div class="eng-body reveal reveal--d1">
+
+      <!-- Force Multipliers (left column) -->
+      <div class="eng-multipliers">
+
+        <article class="eng-mcard">
+          <span class="eng-mcard__badge">מכפיל</span>
+          <i data-lucide="badge-check" class="eng-mcard__icon"></i>
+          <h3 class="eng-mcard__title">כשרות המקום</h3>
+        </article>
+
+        <article class="eng-mcard">
+          <span class="eng-mcard__badge">מכפיל</span>
+          <i data-lucide="monitor" class="eng-mcard__icon"></i>
+          <h3 class="eng-mcard__title">שיווק דיגיטלי</h3>
+        </article>
+
+      </div>
+
+      <!-- 8 regular engines (4×2 grid) -->
+      <div class="eng-grid">
+
+        <article class="eng-card">
+<i data-lucide="truck" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">הסעדות חוץ</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="package" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">משלוחים</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="calendar" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">אירועים פרטיים</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="satellite" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">שיווק יס פלאנט</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="music" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">אווירת בילוי</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="graduation-cap" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">מכללה למינהל</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="mic" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">הופעות חיות</h3>
+        </article>
+
+        <article class="eng-card">
+<i data-lucide="tv" class="eng-card__icon"></i>
+          <h3 class="eng-card__title">שידורי ספורט</h3>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="eng-header">
+      <h2 class="heading-2 reveal reveal--d2 ts" style="margin-bottom:8px">10 מנועי צמיחה</h2>
+      <p class="text-muted reveal reveal--d3" style="font-size:14px; max-width:500px; margin: 0 auto; font-weight:var(--fw-light);">
+        תמונה כוללת. בפגישת ההצעה נצלול לפירוט המלא — תכנית, יעדים, מספרים.
+      </p>
+    </header>
+
+    <!-- Footer stats -->
+    <footer class="eng-footer reveal reveal--d4">
+      <div class="eng-stat">
+        <span class="eng-stat__num">8</span>
+        <span class="eng-stat__label">מנועי<br>הכנסה</span>
+      </div>
+      <div class="eng-stat">
+        <span class="eng-stat__num">2</span>
+        <span class="eng-stat__label">מכפילי<br>כוח</span>
+      </div>
+      <div class="eng-stat">
+        <i data-lucide="file-text" class="eng-stat__icon"></i>
+        <span class="eng-stat__label">תוכנית<br>עסקית מלאה</span>
+      </div>
+    </footer>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     S — ENGINE DETAIL SUB-STACK (10 vertical slides)
      ═══════════════════════════════════════════ -->
 <section class="scene scene--dark" id="scene-3"
   data-n="מתחם ה-1000 — הזדמנות אחת, תזמון מושלם. 100,000 עובדים, שטחים כבר שווקו.">
