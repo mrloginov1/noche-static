@@ -2662,6 +2662,7 @@ body:hover .scene-counter { opacity: 1; }
 .team-row--2 { grid-template-columns: repeat(2, minmax(160px, 200px)); }
 .team-row--3 { grid-template-columns: repeat(3, minmax(140px, 180px)); }
 .team-row--4 { grid-template-columns: repeat(4, minmax(140px, 180px)); }
+.team-row--5 { grid-template-columns: repeat(5, minmax(130px, 170px)); }
 .team-row--8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
   max-width: 1180px;
@@ -2796,6 +2797,7 @@ body:hover .scene-counter { opacity: 1; }
 @media (max-width: 1100px) {
   .team-cubes { grid-template-columns: repeat(4, 1fr); }
   .team-row--4 { grid-template-columns: repeat(4, minmax(120px, 160px)); }
+  .team-row--5 { grid-template-columns: repeat(5, minmax(110px, 150px)); }
   .team-row--8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
@@ -2804,6 +2806,7 @@ body:hover .scene-counter { opacity: 1; }
   .team-row--2 { grid-template-columns: repeat(2, minmax(140px, 180px)); }
   .team-row--3 { grid-template-columns: repeat(3, minmax(110px, 150px)); }
   .team-row--4 { grid-template-columns: repeat(2, minmax(130px, 170px)); }
+  .team-row--5 { grid-template-columns: repeat(3, minmax(110px, 150px)); }
   .team-row--8 { grid-template-columns: repeat(3, minmax(100px, 1fr)); }
 }
 @media (max-width: 460px) {
@@ -2811,6 +2814,7 @@ body:hover .scene-counter { opacity: 1; }
   .team-row--2 { grid-template-columns: 1fr; }
   .team-row--3 { grid-template-columns: repeat(2, minmax(120px, 160px)); }
   .team-row--4 { grid-template-columns: repeat(2, minmax(120px, 160px)); }
+  .team-row--5 { grid-template-columns: repeat(2, minmax(120px, 160px)); }
   .team-row--8 { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
 }
 
@@ -8530,7 +8534,7 @@ body:hover .scene-counter { opacity: 1; }
      S5 — TEAM
      ═══════════════════════════════════════════ -->
 <section class="scene scene--light" id="scene-7"
-  data-n="14 גורמים מקצועיים — 7 כבר עובדים איתנו, 7 בתהליך גיוס. כל אחד נבחר בקפידה.">
+  data-n="15 גורמים מקצועיים — 7 כבר עובדים איתנו, 8 בתהליך גיוס. כל אחד נבחר בקפידה.">
 
   <div class="scene__inner scene__float">
     <h2 class="heading-2 reveal ts" style="color:var(--clr-text-dark);margin-bottom:2px">הון אנושי ומבנה ארגוני</h2>
@@ -8562,8 +8566,8 @@ body:hover .scene-counter { opacity: 1; }
         </article>
       </div>
 
-      <!-- Tier 3: 4 operational managers -->
-      <div class="team-row team-row--4">
+      <!-- Tier 3: 5 operational managers -->
+      <div class="team-row team-row--5">
         <article class="team-cube">
           <i data-lucide="wine" class="team-cube__icon"></i>
           <h3 class="team-cube__title">מנהל בר</h3>
@@ -8583,6 +8587,12 @@ body:hover .scene-counter { opacity: 1; }
           <i data-lucide="shield" class="team-cube__icon"></i>
           <h3 class="team-cube__title">אחמ"שים</h3>
           <p class="team-cube__desc">ניהול משמרת</p>
+        </article>
+        <article class="team-cube">
+          <i data-lucide="speaker" class="team-cube__icon"></i>
+          <h3 class="team-cube__title">איש הגברה ותאורה</h3>
+          <p class="team-cube__desc">אחראי סאונד ותאורה לאירועים ולאווירה השוטפת</p>
+          <span class="team-cube__pending">בתהליך גיוס</span>
         </article>
       </div>
     </div>
